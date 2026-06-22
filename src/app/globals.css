@@ -108,33 +108,91 @@ a {
 }
 
 /* ── Hero Image ── */
-.hero-image {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.hero-image{
+
+position:relative;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:2rem;
+
 }
 
-.logo-bg {
-  position: absolute;
-  opacity: 0.06;
-  width: 650px;
-  animation: spin 35s linear infinite;
+.logo-bg{
+
+position:absolute;
+
+opacity:.03;
+
+width:520px;
+
+filter:blur(1px);
+
+animation:floatLogo 12s ease-in-out infinite;
+
+}
+.profile{
+
+width:380px;
+
+height:500px;
+
+object-fit:cover;
+
+object-position:center top;
+
+border-radius:36px;
+
+position:relative;
+
+z-index:5;
+
+box-shadow:
+
+0 0 80px rgba(210,168,111,.18);
+
+transition:all .4s ease;
+
 }
 
-.profile {
-  width: 400px;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 28px;
-  position: relative;
-  z-index: 5;
-  box-shadow: 0 0 60px rgba(210, 168, 111, 0.15);
+.profile:hover{
+
+transform:translateY(-8px);
+
+box-shadow:
+
+0 0 100px rgba(210,168,111,.25);
+
 }
 
 @keyframes spin {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
+}
+@keyframes floatLogo{
+
+0%{
+
+transform:translateY(0px) rotate(-2deg);
+
+}
+
+50%{
+
+transform:translateY(-12px) rotate(2deg);
+
+}
+
+100%{
+
+transform:translateY(0px) rotate(-2deg);
+
+}
+
 }
 
 /* ── Responsive ── */
@@ -157,4 +215,34 @@ a {
     height: 500px;
     
   }
+}
+
+.hero-image::before{
+
+content:'';
+
+position:absolute;
+
+width:420px;
+
+height:420px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(210,168,111,.18),
+
+transparent 70%
+
+);
+
+filter:blur(35px);
+
+z-index:0;
+
 }
