@@ -40,7 +40,7 @@ export default function Hero() {
           src="/images/profile.png"
           alt="Vantage"
           width={400}
-          height={400}
+          height={500}
           className="profile"
         />
       </div>
